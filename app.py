@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     conn = get_db_connection()
     cur = conn.cursor()
-    cur.execute('SELECT NOW()')  # ejemplo simple
+    cur.execute('SELECT NOW()')
     current_time = cur.fetchone()[0]
     cur.close()
     conn.close()

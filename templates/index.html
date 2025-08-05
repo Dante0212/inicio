@@ -2,10 +2,11 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Página Simple</title>
+    <title>Mi Sitio Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
 </head>
 <body>
-    <h1>Bienvenido a tu sitio web en Railway</h1>
-    <p>La hora actual desde PostgreSQL es: {{ current_time }}</p>
+    <h1>Bienvenido a tu web personalizada 🎨</h1>
+    <p>Este es un ejemplo con Flask, HTML y Railway.</p>
 </body>
 </html>

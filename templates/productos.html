@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de Productos — AirePro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+
+  <header class="header">
+    <h1>Catálogo de Aires Acondicionados</h1>
+    <a href="/" class="btn">← Volver al Inicio</a>
+  </header>
+
+  <section class="section">
+    <div class="productos">
+      <div class="producto">
+        <img src="{{ url_for('static', filename='img/aire1.jpg') }}" alt="Split 12000 BTU">
+        <h3>Split Inverter 12.000 BTU</h3>
+        <p>Ideal para dormitorios y oficinas pequeñas. Bajo consumo y silencioso.</p>
+        <span class="precio">$329.990</span>
+        <a href="#contacto" class="btn">Solicitar</a>
+      </div>
+
+      <div class="producto">
+        <img src="{{ url_for('static', filename='img/aire2.jpg') }}" alt="Cassette 36000 BTU">
+        <h3>Cassette 36.000 BTU</h3>
+        <p>Solución eficiente para espacios grandes: oficinas, restaurantes, locales.</p>
+        <span class="precio">$799.990</span>
+        <a href="#contacto" class="btn">Solicitar</a>
+      </div>
+
+      <div class="producto">
+        <img src="{{ url_for('static', filename='img/aire3.jpg') }}" alt="Muro 18000 BTU">
+        <h3>Muro 18.000 BTU</h3>
+        <p>Modelo mural con gran rendimiento, diseño moderno y control WiFi.</p>
+        <span class="precio">$459.990</span>
+        <a href="#contacto" class="btn">Solicitar</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 AirePro. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

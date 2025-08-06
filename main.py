@@ -48,7 +48,7 @@ def enviar():
         print("Error al enviar correo:", e)
         flash("Hubo un problema al enviar el mensaje. Inténtalo más tarde.", "danger")
 
-    return render_template('enviarr')
+    return render_template('enviar.html')
 
 
 if __name__ == '__main__':

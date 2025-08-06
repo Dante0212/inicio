@@ -48,7 +48,7 @@ def enviar():
         print("Error al enviar correo:", e)
         flash("Hubo un problema al enviar el mensaje. Inténtalo más tarde.", "danger")
 
-    return redirect(request.referrer or '/')
+    return render_template("enviar.html")
 
 
 if __name__ == '__main__':

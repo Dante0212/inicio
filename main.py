@@ -22,6 +22,10 @@ def index():
 def productos():
     return render_template("productos.html")
 
+@app.route('/contacto')
+def contacto():
+    return render_template("productos.html")
+
 @app.route('/enviar', methods=['POST'])
 def enviar():
     nombre = request.form['nombre']

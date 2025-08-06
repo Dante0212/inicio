@@ -28,17 +28,28 @@ def contacto():
 
 @app.route('/enviar', methods=['POST'])
 def enviar():
-    nombre = request.form['nombre']
-    email = request.form['email']
-    mensaje = request.form['mensaje']
+    nombre = request.form.get('nombre')
+    email = request.form.get('email')
+    mensaje = request.form.get('mensaje')
 
-    msg = Message("Nueva solicitud de cotización",
-                  sender=email,
-                  recipients=['cashamaquinola@gmail.com'])  # Destinatario final
-    msg.body = f"Nombre: {nombre}\nCorreo: {email}\nMensaje: {mensaje}"
-    mail.send(msg)
-    flash("Tu mensaje fue enviado correctamente.")
-    return redirect('/')
+    if not (nombre and email and mensaje):
+        flash("Por favor, completa todos los campos.", "danger")
+        return redirect(request.referrer or '/')
+
+    # Aquí se intentaría enviar el correo
+    try:
+        msg = Message("Nueva solicitud de cotización",
+                      sender=app.config['MAIL_USERNAME'],
+                      recipients=['cashamaquinola@gmail.com'])
+        msg.body = f"Nombre: {nombre}\nCorreo: {email}\nMensaje: {mensaje}"
+        mail.send(msg)
+        flash("Tu mensaje fue enviado correctamente.", "success")
+    except Exception as e:
+        print("Error al enviar correo:", e)
+        flash("Hubo un problema al enviar el mensaje. Inténtalo más tarde.", "danger")
+
+    return redirect(request.referrer or '/')
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')

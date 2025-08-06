@@ -24,7 +24,7 @@ def productos():
 
 @app.route('/contacto')
 def contacto():
-    return render_template("productos.html")
+    return render_template("contacto.html")
 
 @app.route('/enviar', methods=['POST'])
 def enviar():

@@ -5,12 +5,12 @@ import os
 app = Flask(__name__)
 app.secret_key = 'hhfq kcmu efrr cyek'
 
-# Configura tu correo (puedes usar Gmail)
+# Configura tu correo
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'TU_CORREO@gmail.com'
-app.config['MAIL_PASSWORD'] = 'TU_CONTRASEÑA_DE_APP'
+app.config['MAIL_USERNAME'] = 'TU_CORREO@gmail.com'  # Reemplaza con tu correo
+app.config['MAIL_PASSWORD'] = 'TU_CONTRASEÑA_DE_APP'  # Reemplaza con tu contraseña de aplicación
 
 mail = Mail(app)
 
@@ -18,6 +18,7 @@ mail = Mail(app)
 def index():
     return render_template("index.html")
 
+@app.route('/productos')
 def productos():
     return render_template("productos.html")
 
@@ -29,13 +30,11 @@ def enviar():
 
     msg = Message("Nueva solicitud de cotización",
                   sender=email,
-                  recipients=['TU_CORREO@gmail.com'])
+                  recipients=['TU_CORREO@gmail.com'])  # Destinatario final
     msg.body = f"Nombre: {nombre}\nCorreo: {email}\nMensaje: {mensaje}"
     mail.send(msg)
     flash("Tu mensaje fue enviado correctamente.")
     return redirect('/')
 
-
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
-

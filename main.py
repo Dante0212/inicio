@@ -9,8 +9,8 @@ app.secret_key = 'hhfq kcmu efrr cyek'
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'TU_CORREO@gmail.com'  # Reemplaza con tu correo
-app.config['MAIL_PASSWORD'] = 'TU_CONTRASEÑA_DE_APP'  # Reemplaza con tu contraseña de aplicación
+app.config['MAIL_USERNAME'] = 'cashamaquinola@gmail.com'  # Reemplaza con tu correo
+app.config['MAIL_PASSWORD'] = 'hhfq kcmu efrr cyek'  # Reemplaza con tu contraseña de aplicación
 
 mail = Mail(app)
 

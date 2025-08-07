@@ -9,48 +9,89 @@
 </head>
 <body>
 
-  <section class="hero text-center text-white bg-dark py-5">
-    <div class="overlay">
-      <h1>¡Confort Inteligente en Todo Momento!</h1>
-      <p>Venta e instalación de aire acondicionado para hogares y empresas.</p>
-      <a href="productos" class="btn btn-light mt-3">Ver Productos</a>
-    </div>
-  </section>
-
-  <section id="beneficios" class="section container py-5">
-    <h2 class="text-center mb-4">¿Por qué elegirnos?</h2>
-    <ul class="list-unstyled text-center">
-      <li>✅ Equipos de alta eficiencia</li>
-      <li>✅ Instalación profesional certificada</li>
-      <li>✅ Garantía extendida y soporte local</li>
-    </ul>
-  </section>
-
-  <section id="productos" class="section container py-5">
-    <h2 class="text-center mb-4">Productos destacados</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-4 d-flex">
-        <div class="card flex-fill text-center shadow-sm">
-          <img src="{{ url_for('static', filename='img/descargar (1).jfif') }}" class="card-img-top" alt="Split 12.000 BTU">
-          <div class="card-body">
-            <h5 class="card-title">Split Inverter 12.000 BTU</h5>
-            <p class="card-text">Alta eficiencia energética, ideal para habitaciones.</p>
-          </div>
+  <!-- Carrusel como Banner -->
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{ url_for('static', filename='img/banner1.jpg') }}" class="d-block w-100" alt="Banner 1">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+          <h1 class="text-white">¡Confort Inteligente en Todo Momento!</h1>
+          <p>Venta e instalación de aire acondicionado para hogares y empresas.</p>
+          <a href="productos" class="btn btn-primary">Ver Productos</a>
         </div>
       </div>
-      <div class="col-md-4 d-flex">
-        <div class="card flex-fill text-center shadow-sm">
-          <img src="{{ url_for('static', filename='img/aire2.jpg') }}" class="card-img-top" alt="Cassette 36.000 BTU">
-          <div class="card-body">
-            <h5 class="card-title">Cassette 36.000 BTU</h5>
-            <p class="card-text">Solución profesional para oficinas y comercios.</p>
-          </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='img/banner2.jpg') }}" class="d-block w-100" alt="Banner 2">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+          <h1 class="text-white">Soluciones adaptadas a tu espacio</h1>
+          <p>Nos preocupamos por tu bienestar térmico.</p>
         </div>
       </div>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- Beneficios -->
+  <section id="beneficios" class="py-5 bg-light text-center">
+    <div class="container">
+      <h2 class="mb-4">¿Por qué elegirnos?</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="p-3">
+            <h4>✅ Alta eficiencia</h4>
+            <p>Aires acondicionados inverter con bajo consumo energético.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3">
+            <h4>✅ Instalación profesional</h4>
+            <p>Instaladores certificados para máxima seguridad y rendimiento.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3">
+            <h4>✅ Garantía y soporte</h4>
+            <p>Soporte técnico en Chile y garantía extendida en todos nuestros productos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="contacto" class="section bg-light py-5">
+  <!-- Productos -->
+  <section id="productos" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Productos destacados</h2>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-4 d-flex">
+          <div class="card shadow-sm flex-fill h-100">
+            <img src="{{ url_for('static', filename='img/descargar (1).jfif') }}" class="card-img-top" alt="Split 12.000 BTU">
+            <div class="card-body text-center">
+              <h5 class="card-title">Split Inverter 12.000 BTU</h5>
+              <p class="card-text">Alta eficiencia energética, ideal para habitaciones.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 d-flex">
+          <div class="card shadow-sm flex-fill h-100">
+            <img src="{{ url_for('static', filename='img/aire2.jpg') }}" class="card-img-top" alt="Cassette 36.000 BTU">
+            <div class="card-body text-center">
+              <h5 class="card-title">Cassette 36.000 BTU</h5>
+              <p class="card-text">Solución profesional para oficinas y comercios.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario de contacto -->
+  <section id="contacto" class="bg-light py-5">
     <div class="container">
       <h2 class="text-center mb-4">Solicita una cotización</h2>
       <div class="row justify-content-center">
@@ -75,10 +116,12 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="bg-dark text-white text-center py-3">
     <p>&copy; 2025 AirePro. Todos los derechos reservados.</p>
   </footer>
 
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
